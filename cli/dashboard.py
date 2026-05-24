@@ -59,7 +59,7 @@ class RecoveryDashboard:
         self.scan_task = self.progress.add_task("scan", total=100)
 
     def build_header(self):
-        title = Text("NTFS File Recovery Tool", style="bold cyan")
+        title = Text("NTFS Data Recovery Tool", style="bold cyan")
         total_size = format_size(getattr(self.boot, "bytes_per_sector", 0) * total_sectors(self.boot))
 
         details = Text()
