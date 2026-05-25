@@ -1,5 +1,4 @@
 from dataclasses import dataclass, field
-from pathlib import Path
 from cli.mft_scanner import *
 
 @dataclass
@@ -14,6 +13,5 @@ class AppState:
     current_record: int = 0
     current_file: str = ""
     output_dir: str = "recovered"
-    output_dir_path: Path = Path(output_dir).resolve()
     entries: list[FileEntry] = field(default_factory=list)
     logs: list[str] = field(default_factory=list)

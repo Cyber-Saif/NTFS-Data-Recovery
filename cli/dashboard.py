@@ -288,7 +288,7 @@ class RecoverySelector:
         details.append("drive ", style="dim")
         details.append(self.drive, style="green")
         details.append("  output folder ", style="dim")
-        details.append(f"{self.state.output_dir_path}", style="green")
+        details.append(f"{self.state.output_dir}", style="green")
         details.append("  filter ", style="dim")
         details.append(self.search or "none", style="white")
         return Panel(Group(title, details, Text(self.message, style="dim")), border_style="bright_black")

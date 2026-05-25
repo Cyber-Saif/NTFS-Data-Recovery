@@ -23,7 +23,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="NTFS data recovery tool")
     #parser.add_argument("--drive", default=DEFAULT_DRIVE, help=r"Raw NTFS volume path, for example \\.\F:")
     parser.add_argument("--drive", help=r"Provide NTFS volume path, for example \\.\F:", required=True)
-    parser.add_argument("--output", default="recovered", help="Directory to store recovered files")
+    parser.add_argument("--output", type= str, default="recovered", help="Directory to store recovered files")
     parser.add_argument("--no-screen", action="store_true", help="Do not use the alternate terminal screen")
     return parser.parse_args()
 
@@ -124,7 +124,7 @@ def render_results(results, state):
         f"\n[green]{state.recovered_files} recovered[/]  "
         f"[red]{state.failed_files} failed[/]  "
         f"[blue]{format_size(state.recovered_bytes)} saved[/]  "
-        f"\n[dim]recorvered files destination ->[/] [bold]{state.output_dir_path}[/]"
+        f"\n[dim]recorvered files destination ->[/] {state.output_dir}"
     )
 
     return Panel(Group(table, summary), title="[bold cyan]Recovered Files[/]", border_style="bright_black")
