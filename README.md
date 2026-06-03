@@ -14,11 +14,12 @@ pip install rich
 ```
 
 # Usage
+By default, it will recover files to the `recover` folder.
 ```Python
 python main.py --drive \\.\D:
 ```
-By default, it will recover files to the `recover` folder.
-or
+Custom destination folder.
 ```Python
-python main.py --drive \\.\D: --output "C:\Users\Desktop\output\" # or you can specify another disk as the destination
+python main.py --drive \\.\D: --output "C:\Users\Desktop\output\"
+# or you can specify another disk as the destination
 ```
