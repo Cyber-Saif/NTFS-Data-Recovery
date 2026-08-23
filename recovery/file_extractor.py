@@ -98,9 +98,3 @@ def recover_entry(disk_reader, entry, boot_record, output_dir: str | Path = "rec
 
     out_path = write_recovered_file(entry.filename, recovered_data[:entry.size], output_dir)
     return out_path, len(recovered_data[:entry.size])
-
-
-# # Reconstruct and write recovered files
-# def reconstruct_files(disk_reader, file_name: str, cluster_details: list, cluster_size: int, data_size: int, output_dir: str = "recovered"):
-#     recovered_data = read_non_resident_data(disk_reader, cluster_details, cluster_size, data_size)
-#     return write_recovered_file(file_name, recovered_data, output_dir)
